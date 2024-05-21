@@ -159,10 +159,6 @@ public class Fitness {
                                 if (gyms[a] == null) {
                                     gyms[a] = membership;
                                     time = LocalDateTime.now();
-                                    System.out.println("Абонемент номер: " + membership.getId() + ", ФИО: " +
-                                            membership.getHolder().getSurname() + " " +
-                                            membership.getHolder().getName() +
-                                            "\nПосещаемая зона: " + zone + ", время посещения: " +  time);
                                     //break;
                                 } else {
                                     x = x - 1;
@@ -174,10 +170,6 @@ public class Fitness {
                                 if (pools[a] == null) {
                                     pools[a] = membership;
                                     time = LocalDateTime.now();
-                                    System.out.println("Абонемент номер: " + membership.getId() + ", ФИО: " +
-                                            membership.getHolder().getSurname() + " " +
-                                            membership.getHolder().getName() +
-                                            "\nПосещаемая зона: " + zone + ", время посещения: " +  time);
                                     //break;
                                 } else {
                                     x = x - 1;
@@ -189,38 +181,38 @@ public class Fitness {
                                 if (groupClasses[a] == null) {
                                     groupClasses[a] = membership;
                                     time = LocalDateTime.now();
-                                    System.out.println("Абонемент номер: " + membership.getId() + ", ФИО: " +
-                                            membership.getHolder().getSurname() + " " +
-                                            membership.getHolder().getName() +
-                                            "\nПосещаемая зона: " + zone + ", время посещения: " +  time);
-                                   // break;
+                                    // break;
                                 } else {
                                     x = x - 1;
                                     if (x == 0) System.out.println("Мест в групповых занятиях нет");
                                 }
                             } break;
+
                         }
                     }
                 }
             }
-        }
+        } System.out.println("Абонемент номер: " + membership.getId() + ", ФИО: " +
+                membership.getHolder().getSurname() + " " +
+                membership.getHolder().getName() +
+                "\nПосещаемая зона: " + zone + ", время посещения: " +  time);
     }
 
     public void info(){
         System.out.println("Посетители тренажерного зала:");
         for (int i = 0; i < 20; i++) {
             if (gyms[i] != null) System.out.println(gyms[i].getHolder().getSurname() +
-                    " " + gyms[i].getHolder().getName() + "Абонемент номер: " + gyms[i].getId());
+                    " " + gyms[i].getHolder().getName() + " Абонемент номер: " + gyms[i].getId());
         }
         System.out.println("Посетители бассейна:");
         for (int i = 0; i < 20; i++) {
             if (pools[i] != null) System.out.println(pools[i].getHolder().getSurname() +
-                    " " + pools[i].getHolder().getName() + "Абонемент номер: " + pools[i].getId());
+                    " " + pools[i].getHolder().getName() + " Абонемент номер: " + pools[i].getId());
         }
         System.out.println("Посетители групповых занятий:");
         for (int i = 0; i < 20; i++) {
             if (groupClasses[i] != null) System.out.println(groupClasses[i].getHolder().getSurname() +
-                    " " + groupClasses[i].getHolder().getName() + "Абонемент номер: " + groupClasses[i].getId());
+                    " " + groupClasses[i].getHolder().getName() + " Абонемент номер: " + groupClasses[i].getId());
         }
     }
 }

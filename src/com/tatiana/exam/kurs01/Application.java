@@ -25,14 +25,15 @@ public class Application {
 
         fitness01.add(Zone.POOL, membership01);
         fitness02.add(Zone.GYM, membership02);
-        //System.out.println(pools[0].getHolder().getName());
+
+        /*
         for (int i = 0; i < 19; i++){
             System.out.println(gyms[i]);
         }
+        */
 
+        fitness01.info();
 
-        //fitness01.info();
-        //System.out.println(gyms[0].getHolder().getName());
 
 
 
