@@ -1,4 +1,4 @@
-package com.tatiana.exam;
+package com.tatiana.exam.kurs01;
 
 public class Holder {
 

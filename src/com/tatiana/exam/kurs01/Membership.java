@@ -1,6 +1,7 @@
-package com.tatiana.exam;
+package com.tatiana.exam.kurs01;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 /*
@@ -18,7 +19,6 @@ import java.time.LocalDate;
 
 Каждый абонемент хранит номер, дату регистрации (текущая дата) и дату окончания регистрации.
 Каждый абонемент хранит информацию о владельце (НЕ НАОБОРОТ). Данные о владельце: имя, фамилия, год рождения.
-
  */
 
 public class Membership {
@@ -27,14 +27,17 @@ public class Membership {
     private LocalDate endDate;
     private Holder holder;
     private Type type;
+    private LocalDateTime time;
 
 
-    public Membership(int id, LocalDate registrationDate, LocalDate endDate, Holder holder, Type type) {
-        if (type == Type.ONETIME) endDate = LocalDate.now();
+    public Membership(int id, LocalDate endDate, Holder holder, Type type) {
         if (id <= 0) throw new IllegalArgumentException("Номер абонемента не может быть отрицательным или нолем");
+        if (holder == null) throw new IllegalArgumentException("Передайте владельца абонемента");
         this.id = id;
         this.registrationDate = LocalDate.now();
         this.endDate = endDate;
+        if (endDate.isBefore(registrationDate)) throw new IllegalArgumentException("Дата окончания абонемента " +
+                "не может быть меньше даты регистрации");
         this.holder = holder;
         this.type = type;
     }
@@ -78,4 +81,13 @@ public class Membership {
     public void setType(Type type) {
         this.type = type;
     }
+
+    public LocalDateTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalDateTime time) {
+        this.time = time;
+    }
+
 }
